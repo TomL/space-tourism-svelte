@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { goto, afterNavigate } from '$app/navigation';
 	import { fly } from 'svelte/transition';
 	import { base } from '$app/paths';
 	import Header from './Header.svelte';
 	import './styles.css';
+	import { navigating } from '$app/stores';
 
-	interface Data {
+	interface DataURL {
 		url: string;
 	}
 
-	export let data: Data;
+	export let data: DataURL;
 	$: ({ url } = data);
-	console.log(data);
 
 	const pages = [
 		'/',
@@ -23,10 +22,13 @@
 
 	let previousPage: string = base;
 	export let directionE = 'right';
-	afterNavigate(({ from }) => {
-		previousPage = from?.url.pathname || previousPage;
-		directionE = pages.indexOf(url) > pages.indexOf(previousPage) ? 'right' : 'left';
-	});
+
+	$: if ($navigating) {
+		previousPage = $navigating.from?.url.pathname || previousPage;
+		if ($navigating.to)
+			directionE =
+				pages.indexOf($navigating.to.url.pathname) > pages.indexOf(previousPage) ? 'right' : 'left';
+	}
 </script>
 
 {#key url}
