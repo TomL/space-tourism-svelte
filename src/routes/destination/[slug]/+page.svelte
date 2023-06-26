@@ -1,8 +1,10 @@
 <script lang="ts">
-	import NavItem from '@/routes/NavItem.svelte';
-	import type { Data } from './+page';
+	import type { PageData } from './$types';
+	import { page } from '$app/stores';
+
 	export const isShown = true;
-	export let data: Data;
+	export let data: PageData;
+	$: ({ destination, destinationPages } = data);
 </script>
 
 <header class="sub-header">
@@ -12,32 +14,33 @@
 	<div class="left planet-left">
 		<img
 			class="planet-image"
-			src={data.destination.image}
-			alt={'Image of ' + data.destination.title}
+			src={destination.image}
+			alt={'Image of ' + destination.title}
 			height="445"
 			width="445"
 		/>
 	</div>
 	<div class="right">
 		<nav class="sub-nav">
-			<NavItem title="Moon" href="/destination/moon" />
-			<NavItem title="mars" href="/destination/mars" />
-			<NavItem title="europa" href="/destination/europa" />
-			<NavItem title="titan" href="/destination/titan" />
+			{#each destinationPages as destinationPage}
+				<div class={$page.url.pathname === '/destination/' + destinationPage.slug ? 'active' : ''}>
+					<a href="/destination/{destinationPage.slug}">{destinationPage.title} </a>
+				</div>
+			{/each}
 		</nav>
-		<p class="h2">{data.destination.title}</p>
+		<p class="h2">{destination.title}</p>
 		<p class="text">
-			{data.destination.description}
+			{destination.description}
 		</p>
 		<hr class="destination-line" />
 		<div class="flex destination-info-wrapper">
 			<div class="destination-info">
 				<p class="sh2">Avg. distance</p>
-				<p class="sh1">{data.destination.distance}</p>
+				<p class="sh1">{destination.distance}</p>
 			</div>
 			<div class="destination-info">
 				<p class="sh2">Est. travel time</p>
-				<p class="sh1">{data.destination.travelTime}</p>
+				<p class="sh1">{destination.travelTime}</p>
 			</div>
 		</div>
 	</div>

@@ -4,44 +4,38 @@
 	import Header from './Header.svelte';
 	import './styles.css';
 	import { navigating } from '$app/stores';
+	import type { PageData } from './$types';
+	import { pageOrderList } from '@/data';
 
-	interface DataURL {
-		url: string;
-	}
-
-	export let data: DataURL;
+	export let data: PageData;
 	$: ({ url } = data);
 
-	const pages = [
-		'/',
-		'/destination/moon',
-		'/destination/mars',
-		'/destination/europa',
-		'/destination/titan'
-	];
-
 	let previousPage: string = base;
-	export let directionE = 'right';
+	export let transitionDirection = 'right';
 
 	$: if ($navigating) {
 		previousPage = $navigating.from?.url.pathname || previousPage;
 		if ($navigating.to)
-			directionE =
-				pages.indexOf($navigating.to.url.pathname) > pages.indexOf(previousPage) ? 'right' : 'left';
+			transitionDirection =
+				pageOrderList.indexOf($navigating.to.url.pathname) > pageOrderList.indexOf(previousPage)
+					? 'right'
+					: 'left';
 	}
+	/*"current: {url}" "previousPage: {previousPage}" "direction : {directionE}" "index url {pages.indexOf(
+			url
+		)}" "index previousPage {pages.indexOf(previousPage)}"*/
 </script>
 
 {#key url}
 	<div class="container">
-		"current: {url}" "previousPage: {previousPage}" "direction : {directionE}" "index url {pages.indexOf(
-			url
-		)}" "index previousPage {pages.indexOf(previousPage)}"
 		<Header />
 		<main
-			in:fly={directionE == 'left'
+			in:fly={transitionDirection == 'left'
 				? { x: -200, duration: 300, delay: 300 }
 				: { x: 200, duration: 300, delay: 300 }}
-			out:fly={directionE == 'left' ? { x: 200, duration: 300 } : { x: -200, duration: 300 }}
+			out:fly={transitionDirection == 'left'
+				? { x: 200, duration: 300 }
+				: { x: -200, duration: 300 }}
 		>
 			<slot />
 		</main>
