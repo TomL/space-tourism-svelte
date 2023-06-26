@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+
+:root {
+	--dark-color: hsl(230 35% 7%);
+	--offset-color: hsl(231 77% 90%);
+	--white-color: hsl(0 0% 100%);
+	--white-half-op-color: hsl(0 0% 100% / 0.5);
+	--shadow-color: hsl(0 0% 100% / 0.1);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--dark-color);
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 16px;
+	color: var(--white-color);
+	scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+}
+
+.text {
+	color: var(--offset-color);
+	font-family: 'Barlow', sans-serif;
+	font-size: 1.125rem;
+	line-height: 2rem;
+	max-width: 28rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.sh1 {
+	font-family: 'Bellefair', serif;
+	text-transform: uppercase;
+	color: var(--white-color);
+}
+
+.h5,
+.sh2,
+.sh3 {
+	font-family: 'Barlow Condensed', 'sans-serif';
+	text-transform: uppercase;
+}
+
+.h1 {
+	font-size: 9.375rem;
+}
+
+.h2 {
+	font-size: 6.25rem;
+}
+
+.h3 {
+	font-size: 3.5rem;
+}
+
+.h4 {
+	font-size: 2rem;
+}
+
+.op-50 {
+	opacity: 0.5;
+}
+
+.h5 {
+	font-size: 1.75rem;
+	letter-spacing: 0.3rem;
+	color: var(--white-color);
+}
+
+.h5 > span {
+	opacity: 0.25;
+}
+
+.sh1 {
+	font-size: 1.75em;
+}
+
+.sh2 {
+	font-size: 0.875rem;
+	letter-spacing: 0.146875rem;
+	color: var(--offset-color);
+}
+
+.sh3 {
+	letter-spacing: 0.16875rem;
+	color: var(--offset-color);
+}
+
+header {
+	display: flex;
+	padding: 2rem 0;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 1px solid rgba(255, 255, 255, 0);
+	border-bottom-color: rgba(255, 255, 255, 0.25);
+	margin: 1rem 0;
+}
+
+header > hr {
+	flex-grow: 1;
+	margin: auto -2rem auto 2rem;
+	z-index: 20;
+}
+
+header > img {
+	margin-left: 1.5rem;
+	width: 3rem;
+	height: 3rem;
+	padding: 1.5rem;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.main-nav {
+	width: 50rem;
+	padding: 0 6rem;
+	background: rgba(255, 255, 255, 0.04);
+	backdrop-filter: blur(2.5rem);
+	justify-content: space-around;
+}
+
+.sub-nav > div {
+	margin-right: 2rem;
+}
+
+nav > div > a {
+	padding: 2rem 0;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.16875rem;
+}
+
+.sub-nav > div > a {
+	padding: 1rem 0;
+}
+
+nav > div {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	height: 100%;
+	border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
+}
+
+nav > div.active {
+	border-bottom-color: var(--white-color);
+}
+
+nav > div:hover {
+	border-bottom-color: var(--white-half-op-color);
+}
+
+nav > div > a > span {
+	font-weight: bold;
+	margin-right: 0.25rem;
+	color: var(--white-color);
+}
+
+.main {
+	margin: auto;
+	max-width: 1100px;
+	display: flex;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.left,
+.right {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+
+.right > * {
+	margin-top: 0.5rem;
+}
+
+.planet-image {
+	height: 27.8125rem;
+	width: 27.8125rem;
+}
+
+.right-index {
+	flex-direction: row;
+}
+
+/* index page styles */
+
+.index-top {
+	margin-top: 24vh;
+}
+
+.circle {
+	position: relative;
+	background: var(--white-color);
+	color: var(--dark-color);
+	border-radius: 50%;
+	width: 17.125rem;
+	height: 17.125rem;
+	line-height: 17.125rem;
+	text-align: center;
+	transition: box-shadow 0.6s ease;
+	opacity: 1;
+}
+
+.circle:hover {
+	box-shadow: 0 0 0 5.5rem var(--shadow-color);
+}
+
+/* planet page styles */
+.h5 > span {
+	font-weight: bold;
+	color: var(--white-color);
+	margin-right: 1.25rem;
+}
+
+.destination-info {
+	flex-grow: 1;
+}
+
+.destination-info > p {
+	padding: 0.5rem 0;
+}
+
+.planet-image {
+	height: 27.8125rem;
+	width: 27.8125rem;
+}
+
+/* crew page */
+
+.crew-box {
+	margin-top: 15vh;
+}
+
+.crew-box > .left > * {
+	margin-top: 2.5rem;
+}
+
+.dots > span {
+	height: 1rem;
+	width: 1rem;
+	background: rgba(255, 255, 255, 0.17);
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 1.75rem;
+}
+
+.dots > span:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.dots > span.active {
+	background-color: var(--white-color);
+}
+
+.crew-image {
+	position: absolute;
+	bottom: 0;
+	right: 10%;
+	height: 80vh;
+}
+
+/* tech page */
+.vehicle-image {
+	position: absolute;
+	right: 0;
+	bottom: 10%;
+}
+
+.tech-box {
+	margin-top: 15vh;
+}
+
+.tech-box > .left {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.tech-slider {
+	width: 80px;
+}
+
+.tech-content > * {
+	margin-top: 0.5rem;
+}
+
+.dots-big {
+	display: flex;
+	flex-direction: column;
+	margin-right: 5rem;
+}
+.dots-big > span {
+	height: 5rem;
+	width: 5rem;
+	line-height: 5rem;
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	display: inline-block;
+	margin-bottom: 2rem;
+}
+
+.dots-big > span:hover {
+	border-color: var(--white-color);
+}
+.dots-big > span.active {
+	background: var(--white-color);
+	color: var(--dark-color);
+}
+
+/*
+attempt at using psuedo element to improve perfomance
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 13rem;
+    height: 13rem;
+    background: black;
+    box-shadow: 0 0 0 5.5rem black;/*hsl(0 0% 100% / 0.1);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    border-radius: 50%;
+    left: 1.5rem;
+    top: 1.5rem
+}
+
+.circle:hover::after {
+    transform: scale(1.25, 1.25);
+    opacity: 1;
+  }*/

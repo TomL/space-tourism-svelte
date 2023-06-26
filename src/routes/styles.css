@@ -28,13 +28,19 @@ body {
 }
 
 .container {
-	min-height: 100vh;
-	overflow: hidden;
+	height: 100vh;
 	background: var(--background-image) no-repeat center/cover;
+	display: flex;
+	flex-direction: column;
+	overflow-y: hidden;
 }
 
 a {
 	text-decoration: none;
+}
+
+button {
+	all: unset;
 }
 
 .text {
@@ -103,7 +109,7 @@ a {
 	color: var(--offset-color);
 }
 
-header {
+.header {
 	display: flex;
 	padding: 1rem 0;
 }
@@ -117,20 +123,20 @@ hr {
 	width: 100%;
 }
 
-header > hr {
+.main-header > hr {
 	flex-grow: 1;
 	margin: auto -2rem auto 0.5rem;
 	z-index: 20;
 }
 
-header > img {
+.main-header > img {
 	margin: 0 1.5rem;
 	width: 3rem;
 	height: 3rem;
 	padding: 1.5rem;
 }
 
-nav {
+.nav {
 	display: flex;
 	align-items: center;
 	box-sizing: border-box;
@@ -157,7 +163,7 @@ nav {
 	margin-right: 2rem;
 }
 
-nav > div > a {
+.nav > div > a {
 	padding: 2rem 0;
 	color: white;
 	text-transform: uppercase;
@@ -168,7 +174,7 @@ nav > div > a {
 	padding: 1rem 0;
 }
 
-nav > div {
+.nav > div {
 	display: flex;
 	box-sizing: border-box;
 	align-items: center;
@@ -176,11 +182,11 @@ nav > div {
 	border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
 }
 
-nav > div.active {
+.nav > div.active {
 	border-bottom-color: var(--white-color);
 }
 
-nav > div:hover {
+.nav > div:hover {
 	border-bottom-color: var(--white-half-op-color);
 }
 
@@ -191,22 +197,36 @@ nav > div:hover {
 	padding-right: 0.5rem;
 }
 
-main {
-	margin: auto;
+.main {
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.content {
 	max-width: 68.75rem;
-	padding-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	height: 100%;
 }
 
 .flex {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	flex-grow: 1;
+	height: 100%;
 }
 
 .left-content,
 .right-content {
 	width: 100%;
+	max-width: 28rem;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	flex-direction: column;
 }
 
@@ -224,14 +244,14 @@ main {
 }
 
 .right-index {
-	flex-direction: row;
+	align-items: end;
 }
 
 /* index page styles */
 
 .index-box {
-	margin-top: 24vh;
-	align-items: flex-end;
+	/*margin-top: 24vh;*/
+	/*align-items: flex-end;*/
 }
 
 .index-box .h5 {
@@ -239,6 +259,7 @@ main {
 }
 
 .circle {
+	margin-top: 6rem;
 	background: var(--white-color);
 	color: var(--dark-color);
 	border-radius: 50%;
@@ -256,7 +277,7 @@ main {
 
 /* planet page styles */
 .destination-box {
-	margin-top: 10vh;
+	/*margin-top: 10vh;*/
 }
 
 .h5 > span {
@@ -269,8 +290,16 @@ main {
 	flex-grow: 1;
 }
 
+.destination-info-wrapper {
+	display: flex;
+}
+
 .destination-info > p {
 	padding: 0.5rem 0;
+}
+
+.destination-line {
+	max-width: 28rem;
 }
 
 .planet-image {
@@ -280,19 +309,13 @@ main {
 
 /* crew page */
 
-.crew-box > .left-content {
-	margin-top: 10vh;
-}
-
 .crew-box > .left-content > * {
 	margin-top: 2.5rem;
 }
 
 .crew-box > .right-content {
-	width: 35rem;
 	height: 18.75rem;
 	display: block;
-	justify-content: flex-start;
 }
 
 .dots > a {
@@ -316,7 +339,6 @@ main {
 	overflow: hidden;
 	height: 37.5rem;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-	padding: 0 2rem;
 }
 
 .crew-title {
@@ -334,11 +356,11 @@ main {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	margin-top: 10vh;
+	align-items: center;
 }
 
-.tech-box > .right-content {
-	width: 400px;
+.tech-box > .left-content {
+	max-width: 100%;
 }
 
 .tech-slider {
@@ -413,12 +435,12 @@ main {
 		font-size: 1.25rem;
 	}
 
-	header {
+	.header {
 		padding: 0;
 		justify-content: space-between;
 	}
 
-	header > hr {
+	.header > hr {
 		display: none;
 	}
 
@@ -435,13 +457,14 @@ main {
 		width: 100%;
 	}
 
-	main {
+	.main {
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
 		width: auto;
 		margin: 0 2rem;
 		align-items: center;
+		padding: 0;
 	}
 
 	.sub-header {
@@ -470,6 +493,10 @@ main {
 	/* index page */
 	.index-box {
 		margin-top: 0;
+	}
+
+	.circle {
+		margin: 0;
 	}
 
 	/* destination page */
@@ -599,7 +626,7 @@ main {
 		max-width: 40rem;
 	}
 
-	header {
+	.header {
 		padding: 2rem 0;
 	}
 
@@ -633,6 +660,16 @@ main {
 	.mobile-nav-close-icon {
 		padding: 1.5rem;
 		align-self: flex-end;
+	}
+
+	.mobile-nav-icon {
+		width: 3rem;
+		height: 3rem;
+		padding: 1.5rem;
+	}
+
+	.nav-open-button {
+		margin: 0 1.5rem;
 	}
 
 	.nav-number {

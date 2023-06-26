@@ -26,10 +26,11 @@
 		)}" "index previousPage {pages.indexOf(previousPage)}"*/
 </script>
 
-{#key url}
-	<div class="container">
-		<Header />
+<div class="container">
+	<Header />
+	{#key url}
 		<main
+			class="main"
 			in:fly={transitionDirection == 'left'
 				? { x: -200, duration: 300, delay: 300 }
 				: { x: 200, duration: 300, delay: 300 }}
@@ -39,5 +40,5 @@
 		>
 			<slot />
 		</main>
-	</div>
-{/key}
+	{/key}
+</div>
