@@ -36,10 +36,10 @@
 			</button>
 		</div>
 		<nav class="nav main-nav">
-			<HeaderNavItem title="Home" num="00" href="/" />
-			<HeaderNavItem title="Destination" num="01" href="/destination" />
-			<HeaderNavItem title="Crew" num="02" href="/crew" />
-			<HeaderNavItem title="Technology" num="03" href="/tech" />
+			<HeaderNavItem title="Home" num="00" href="/" on:click={toggleMenu} />
+			<HeaderNavItem title="Destination" num="01" href="/destination" on:click={toggleMenu} />
+			<HeaderNavItem title="Crew" num="02" href="/crew" on:click={toggleMenu} />
+			<HeaderNavItem title="Technology" num="03" href="/tech" on:click={toggleMenu} />
 		</nav>
 	</div>
 </header>

@@ -32,7 +32,6 @@ body {
 	background: var(--background-image) no-repeat center/cover;
 	display: flex;
 	flex-direction: column;
-	overflow-y: hidden;
 }
 
 a {
@@ -276,10 +275,6 @@ hr {
 }
 
 /* planet page styles */
-.destination-box {
-	/*margin-top: 10vh;*/
-}
-
 .h5 > span {
 	font-weight: bold;
 	color: var(--white-color);
@@ -360,7 +355,7 @@ hr {
 }
 
 .tech-box > .left-content {
-	max-width: 100%;
+	max-width: 32rem;
 }
 
 .tech-slider {
@@ -523,10 +518,11 @@ hr {
 		width: 100%;
 	}
 
+	/*
 	.destination-info {
 		text-align: left;
 		flex-grow: unset;
-	}
+	}*/
 
 	/* crew page */
 	.crew-box > .left-content {
@@ -552,7 +548,7 @@ hr {
 	}
 
 	.tech-box > .left-content {
-		margin-top: unset;
+		margin-top: 2rem;
 		flex-direction: column;
 	}
 

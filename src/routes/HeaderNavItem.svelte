@@ -12,7 +12,7 @@
 		? 'active'
 		: ''}
 >
-	<a {href}>
+	<a {href} on:click>
 		<span class="nav-number">{num}</span>{title}
 	</a>
 </div>
