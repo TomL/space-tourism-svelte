@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
+	import { setBackground } from '@/helper';
+
+	setBackground('var(--background-image-destination)');
 
 	export const isShown = true;
 	export let data: PageData;
@@ -11,7 +14,7 @@
 	<p class="h5"><span class="title-number">01</span>Pick your destination</p>
 </header>
 <div class="flex destination-box">
-	<div class="left planet-left">
+	<div class="left-content planet-left">
 		<img
 			class="planet-image"
 			src={destination.image}
@@ -20,7 +23,7 @@
 			width="445"
 		/>
 	</div>
-	<div class="right">
+	<div class="">
 		<nav class="sub-nav">
 			{#each destinationPages as destinationPage}
 				<div class={$page.url.pathname === '/destination/' + destinationPage.slug ? 'active' : ''}>

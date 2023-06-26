@@ -78,10 +78,6 @@ a {
 	font-size: 2rem;
 }
 
-.op-50 {
-	color: var(--white-half-op-color);
-}
-
 .h5 {
 	font-size: 1.75rem;
 	letter-spacing: 0.3rem;
@@ -206,19 +202,19 @@ main {
 	flex-direction: row;
 }
 
-.left,
-.right {
+.left-content,
+.right-content {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
 }
 
-.left > * {
+.left-content > * {
 	margin-top: 1rem;
 }
 
-.right > * {
+.right-content > * {
 	margin-top: 0.5rem;
 }
 
@@ -284,15 +280,15 @@ main {
 
 /* crew page */
 
-.crew-box > .left {
+.crew-box > .left-content {
 	margin-top: 10vh;
 }
 
-.crew-box > .left > * {
+.crew-box > .left-content > * {
 	margin-top: 2.5rem;
 }
 
-.crew-box > .right {
+.crew-box > .right-content {
 	width: 35rem;
 	height: 18.75rem;
 	display: block;
@@ -323,6 +319,10 @@ main {
 	padding: 0 2rem;
 }
 
+.crew-title {
+	color: var(--white-half-op-color);
+}
+
 /* tech page */
 .vehicle-image {
 	height: 527px;
@@ -330,14 +330,14 @@ main {
 	overflow: visible;
 }
 
-.tech-box > .left {
+.tech-box > .left-content {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	margin-top: 10vh;
 }
 
-.tech-box > .right {
+.tech-box > .right-content {
 	width: 400px;
 }
 
@@ -456,8 +456,8 @@ main {
 		align-items: center;
 	}
 
-	.left,
-	.right {
+	.left-content,
+	.right-content {
 		justify-content: center;
 		align-items: center;
 		margin: 2rem 0;
@@ -487,7 +487,7 @@ main {
 		max-width: none;
 	}
 
-	.destination-box .right > * {
+	.destination-box .right-content > * {
 		margin: 1rem 0;
 	}
 
@@ -502,11 +502,11 @@ main {
 	}
 
 	/* crew page */
-	.crew-box > .left {
+	.crew-box > .left-content {
 		margin-top: unset;
 	}
 
-	.crew-box > .left > * {
+	.crew-box > .left-content > * {
 		margin-top: 2rem;
 	}
 
@@ -524,12 +524,12 @@ main {
 		max-width: none;
 	}
 
-	.tech-box > .left {
+	.tech-box > .left-content {
 		margin-top: unset;
 		flex-direction: column;
 	}
 
-	.tech-box > .left > * {
+	.tech-box > .left-content > * {
 		margin-top: 2rem;
 	}
 
@@ -543,7 +543,7 @@ main {
 		margin: 0 1rem;
 	}
 
-	.tech-box > .right {
+	.tech-box > .right-content {
 		width: unset;
 	}
 
@@ -649,8 +649,8 @@ main {
 		padding: 2rem 0 1rem;
 	}
 
-	.left,
-	.right {
+	.left-content,
+	.right-content {
 		margin: 0.5rem 0;
 	}
 
@@ -672,7 +672,7 @@ main {
 		width: 14rem;
 	}
 
-	.destination-box .right > * {
+	.destination-box .right-content > * {
 		margin: 0.5rem 0;
 	}
 
@@ -685,12 +685,12 @@ main {
 		height: 18rem;
 	}
 
-	.crew-box > .right {
+	.crew-box > .right-content {
 		height: unset;
 		width: unset;
 	}
 
-	.crew-box > .left > * {
+	.crew-box > .left-content > * {
 		order: 2;
 	}
 

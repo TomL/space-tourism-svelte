@@ -1,5 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { setBackground } from '@/helper';
+
+	setBackground('var(--background-image-home)');
 	export let data: PageData;
 	$: ({ homePage } = data);
 </script>
@@ -12,7 +15,7 @@
 			{homePage.content}
 		</p>
 	</div>
-	<div class="right right-index">
+	<div class="right-content right-index">
 		<a class="h4 circle" href="/destination/moon">Explore</a>
 	</div>
 </div>

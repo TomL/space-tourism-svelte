@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
+	import { setBackground } from '@/helper';
+
+	setBackground('var(--background-image-tech)');
 
 	export const isShown = true;
 	export let data: PageData;
@@ -11,7 +14,7 @@
 	<p class="h5"><span class="title-number">03</span>Space launch 101</p>
 </header>
 <div class="flex tech-box">
-	<div class="left">
+	<div class="left-content">
 		<div class="dots-big">
 			{#each techPages as techPage, index}
 				<a
@@ -28,7 +31,7 @@
 			<p class="text">{tech.description}</p>
 		</div>
 	</div>
-	<div class="right">
+	<div class="right-content">
 		<picture>
 			<source class="vehicle-image" srcSet={tech.imageLandscape} media="(max-width: 1024px)" />
 			<img class="vehicle-image" src={tech.image} alt={'Image of ' + tech.title} />
