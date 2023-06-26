@@ -10,6 +10,10 @@
 	$: ({ destination, destinationPages } = data);
 </script>
 
+<svelte:head>
+	<title>{destination.title}</title>
+</svelte:head>
+
 <div class="content">
 	<header class="header sub-header">
 		<p class="h5"><span class="title-number">01</span>Pick your destination</p>

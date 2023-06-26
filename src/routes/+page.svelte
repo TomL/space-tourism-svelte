@@ -7,6 +7,10 @@
 	$: ({ homePage } = data);
 </script>
 
+<svelte:head>
+	<title>Space</title>
+</svelte:head>
+
 <div class="content">
 	<div class="flex index-box">
 		<div class="left-content">

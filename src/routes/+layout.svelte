@@ -8,6 +8,10 @@
 	$: ({ url } = data);
 </script>
 
+<svelte:head>
+	<meta name="description" content="Learn about space" />
+</svelte:head>
+
 <div class="container">
 	<Header />
 	{#key url}

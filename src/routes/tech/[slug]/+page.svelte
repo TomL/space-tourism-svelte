@@ -10,6 +10,10 @@
 	$: ({ tech, techPages } = data);
 </script>
 
+<svelte:head>
+	<title>{tech.title}</title>
+</svelte:head>
+
 <div class="content">
 	<header class="header sub-header">
 		<p class="h5"><span class="title-number">03</span>Space launch 101</p>

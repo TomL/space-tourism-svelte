@@ -10,6 +10,10 @@
 	$: ({ crew, crewPages } = data);
 </script>
 
+<svelte:head>
+	<title>{crew.title} {crew.name}</title>
+</svelte:head>
+
 <div class="content">
 	<header class="header sub-header">
 		<p class="h5"><span class="title-number">02</span>Meet your crew</p>
