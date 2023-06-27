@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
-
 :root {
 	--dark-color: hsl(230 35% 7%);
 	--offset-color: hsl(231 77% 90%);
@@ -517,12 +515,6 @@ hr {
 		flex-direction: row;
 		width: 100%;
 	}
-
-	/*
-	.destination-info {
-		text-align: left;
-		flex-grow: unset;
-	}*/
 
 	/* crew page */
 	.crew-box > .left-content {
