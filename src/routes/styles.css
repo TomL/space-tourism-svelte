@@ -1,3 +1,47 @@
+/* barlow-condensed-regular - latin */
+@font-face {
+	font-display: fallback;
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/barlow-condensed-v12-latin-regular.woff2') format('woff2');
+}
+
+/* barlow-condensed-700 - latin */
+@font-face {
+	font-display: fallback;
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/fonts/barlow-condensed-v12-latin-700.woff2') format('woff2');
+}
+
+/* barlow-regular - latin */
+@font-face {
+	font-display: fallback;
+	font-family: 'Barlow';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/barlow-v12-latin-regular.woff2') format('woff2');
+}
+
+/* bellefair-regular - latin */
+@font-face {
+	font-family: 'Bellefair';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/bellefair-v14-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Bellefair fallback';
+	src: local(Arial); /* required! */
+	size-adjust: 95%;
+	ascent-override: 96%;
+	descent-override: normal;
+	line-gap-override: normal;
+}
+
 :root {
 	--dark-color: hsl(230 35% 7%);
 	--offset-color: hsl(231 77% 90%);
@@ -53,7 +97,7 @@ button {
 .h3,
 .h4,
 .sh1 {
-	font-family: 'Bellefair', serif;
+	font-family: 'Bellefair', 'Bellefair fallback';
 	text-transform: uppercase;
 	color: var(--white-color);
 }
