@@ -43,7 +43,7 @@
 }
 
 :root {
-	--dark-color: hsl(230 35% 7%);
+	--dark-color: hsl(0, 0%, 0%);
 	--offset-color: hsl(231 77% 90%);
 	--white-color: hsl(0 0% 100%);
 	--white-half-op-color: hsl(0 0% 100% / 0.5);
@@ -88,7 +88,7 @@ button {
 	color: var(--offset-color);
 	font-family: 'Barlow', sans-serif;
 	font-size: 1.125rem;
-	line-height: 2rem;
+	line-height: 1,3rem;
 	max-width: 28rem;
 }
 
@@ -282,6 +282,16 @@ hr {
 .planet-image {
 	height: 27.8125rem;
 	width: 27.8125rem;
+	animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(45deg);
+	}
+	100% {
+		transform: rotate(95deg);
+	}
 }
 
 .right-index {
